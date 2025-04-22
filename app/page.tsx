@@ -4,8 +4,12 @@ import logo from "@/public/logo.svg"
 import {Typewriter, Cursor} from "react-simple-typewriter"
 import ButtonProvider from "./components/ButtonProvider"
 import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 export default function Home() {
   const {data :session}= useSession()
+  if(session){
+    redirect('/dashboard/notes') 
+  }
 
   return (
     <section className ="w-full h-screen flex items-center justify-center flex-col gap-2">
