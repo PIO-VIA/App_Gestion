@@ -1,5 +1,6 @@
 import DashboardNav from "../components/DashboardNav"
 import ButtonSignOut from "../components/ButtonSignOut"
+import { ToastContainer } from 'react-toastify';
 
 export default async function DashboardLayout({children}:Readonly<{children:React.ReactNode}>) {
     return (
@@ -8,6 +9,7 @@ export default async function DashboardLayout({children}:Readonly<{children:Reac
             <div className="w-full h-full">
                 <ButtonSignOut/>
                 {children}
+                <ToastContainer/>
             </div>
             
         </section>
